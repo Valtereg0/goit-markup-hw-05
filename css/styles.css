@@ -596,7 +596,7 @@ img {
 }
 
 .footer-input {
-  border: 1px solid #fff;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   width: 264px;
   height: 40px;
@@ -611,7 +611,7 @@ img {
 }
 
 .footer-input::placeholder {
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer-input:focus {
@@ -622,7 +622,7 @@ img {
   /* line-height: 24px; */
   line-height: 2;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer-btn {
@@ -632,11 +632,13 @@ img {
   border-radius: 4px;
   border: none;
   padding: 8px 24px;
-  width: 165px;
+  min-width: 165px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   height: 40px;
   background: #4d5ae5;
   color: #fff;
-  gap: 16px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -648,6 +650,7 @@ img {
 
 .footer-btn-svg {
   fill: #fff;
+  margin-left: 16px;
 }
 
 /* --------BACKOVERLAY----------- */
@@ -661,6 +664,8 @@ img {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-open {
@@ -681,20 +686,29 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 72px 24px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 24px;
   right: 24px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #e7e9fc;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
+  border: none;
   background-color: #404bbf;
   fill: #fff;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -735,10 +749,13 @@ img {
 
 .modal-input:focus + .modal-icon {
   fill: #4d5ae5;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-label {
+  display: block;
+  font-size: 12px;
+  line-height: 1.17;
   line-height: 1.16667;
   letter-spacing: 0.04em;
   color: #8e8f99;
@@ -747,18 +764,21 @@ img {
 }
 
 .modal-field {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .modal-input-wrap {
   position: relative;
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-icon {
   position: absolute;
-  left: 19px;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn {
@@ -767,7 +787,8 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   /* line-height: 24px; */
@@ -777,11 +798,12 @@ img {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  cursor: pointer;
   border: none;
   min-width: 169px;
   height: 56px;
   padding: 16px 32px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn:hover,
@@ -797,8 +819,13 @@ img {
   height: 120px;
   padding: 8px 16px;
   resize: none;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
   margin-bottom: 16px;
   outline: transparent;
+  background-color: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -807,9 +834,16 @@ img {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-chekbox {
+  margin-bottom: 24px;
+}
+
 .modal-chek-text {
+  font-size: 12px;
+  line-height: 1.17;
   font-weight: 400;
   font-size: 12px;
+  letter-spacing: 0.04em;
   line-height: 1.16667;
   letter-spacing: 0.04em;
   color: #8e8f99;
@@ -830,10 +864,13 @@ img {
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     margin-right: 8px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -841,5 +878,5 @@ img {
   border-radius: 2px;
   fill: #f4f4fd;
   background-color: #404bbf;
-  border: 1px solid #404bbf;
+  border: none;
 }
